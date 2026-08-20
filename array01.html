@@ -19,25 +19,33 @@
             {name: "grape", color: "purple", quantity: 10},
             {name: "strawberry", color: "red", quantity: 8}];
 
-        //add a new object .push()
-        //fruits.push({name: "kiwi", color: "brown", quantity: 4});
-        //remove the last object_ .pop()
+        //push()-last add a new object--1
+        //fruits.push({name: "coconut", color: "brown", quantity: 14});
+
+        //pop()-remove the last object--2
         //fruits.pop();
 
 
-        //add a first object_unshift("")
+        //unshift("")-add a first object--3
         //fruits.unshift({name: "mango", color: "yellow", quantity: 6});
-        //remove the frist object_shift()
+
+        //shift()-remove the frist object--4
         //fruits.shift();
 
-        // remove any position 1mane 1pice remove
+        //splice()- remove any position 1mane 1pice remove--5
         //fruits.splice(3, 1);
         // add a new object in the any position
         //fruits.splice(2, 1, {name: "watermelon", color: "green", quantity: 1});
 
         console.log(fruits);
 
-        //map()_ array upadan thik rekhe create new array 
+        //slice()- mul array theke kono specific upadan kete ana hoy--6
+        //jemon position2-no:5er age porjonto ketbe
+            let animals = ["cat", "dog", "elephant", "giraffe", "lion"];
+            let newAnimals = animals.slice(2,5);
+            console.log(newAnimals);
+
+        //map()_ array upodan thik rekhe create new array --7
             let numbers = [1, 2, 3, 4, 5];
             let dabule = numbers.map(function(num) {
                 return num * 2;
@@ -45,13 +53,103 @@
             console.log(dabule);
 
 
- git config --global user.name "labib7402"
- git config --global user.email "labib7402@gmail.com"
+        //filter()- sorto onujayi upodan seke ber kore--8
+            let age = [10, 20, 30, 40, 50];
+            let adult = age.filter(function(num) {
+                return num >= 18;
+            });
+            console.log(adult);
 
+        //reduce()- upodan gulo ke ekta value te convert kore--9
+            let number2 = [10, 15, 7, 20];
+            let sum = number2.reduce(function(total, num) {
+                return total + num;
+            }, 0);
+            console.log(sum);
 
+        //find()- upodan gulo ke search kore man show
+        // sorto mile 1ta show korbe and left-right search korbe--10
+            let names = ["John", "Jane", "Jim", "Jack"];
+            let result = names.find(function(name) {
+                return name === "Jim";
+            });
+            console.log(result);
 
+            let number3 = [8, 19 , 10, 15, 22, 20];
+            let foundnum3 = number3.find(function(num) {
+                return num >10; //>,<,==
+            });
+            console.log(foundnum3);
 
+        //findIndex()- find er moto kintu condition diye--11
+        //position no: show korbe
+            let number4 = [8, 19 , 10, 15, 22, 20];
+            let foundnum4 = number4.findIndex(function(num) {
+                return num >20 ; //>,<,==
+            });
+            console.log(foundnum4);
 
+        //indexOf()- kono specific upodan kon position no: show korbe--12
+            let number1 = [5, 10 , 15, 20, 25, 30];
+            let foundnum1 = number1.indexOf(15);
+            console.log(foundnum1);
+
+        //lastIndexOf()- indexOf er moto kintu ekoi upodan ekadhik bar
+        //thakle last added upodan er jonno right-left search--13
+            let fruits1 = ["apple", "banana", "orange", "pear", "banana", "kiwi", "banana", "strawberry"];
+            let foundfruits= fruits1.lastIndexOf("banana");
+            console.log(foundfruits);    
+
+        //includes()- array te kono specific element ache ki na--14
+        // check kore true/false return kore
+            let number = [8, 19 , 10, 15, 22, 20];
+            let hasElement = number.includes(16);
+            console.log(hasElement);    
+
+        //some()-sorto mile true/false return kore--15
+            let number5 = [8, 19 , 10, 15, 22, 20];
+            let result1 = number5.some(function(num) {
+                return num > 20;
+            });
+            console.log(result1);
+
+        //every()- sobgulo upodan sorto mile true/false return kore--16
+            let age1 = [10, 20, 30, 40, 50];
+            let adult1 = age1.every(function(num) {
+                return num >= 18;
+            });
+            console.log(adult1);
+
+        //forEach()- sobgulo upodan ke loop kore show korbe--17
+            let number6 = ["Labib", "Abdullah", "Rifat", "Shuvo", "Rony"];
+            number6.forEach(function(num) {
+                console.log(num);
+            });
+
+        //concat()- 2ta array ke join kore new array create kore--18
+            let animal1 = ["cat", "dog"];
+            let animal2 = ["elephant", "giraffe"];
+            let newArr = animal1.concat(animal2);
+            console.log(newArr);
+            //output: ["cat", "dog", "elephant", "giraffe"]
+
+        //join()- array ke string e convert kore--19
+            let sentences = ["JavaScript","is","awesome"];
+            let sentence = sentences.join(" ");
+            console.log(sentence);
+            //output: "JavaScript is awesome"
+
+        //sort()- array ke a-z,0-9 sajiye dey--20
+            let letters = ["d", "a", "c", "b"];
+            let numb = [3, 1, 4, 2];
+            letters.sort();
+            numb.sort();
+            console.log(letters);
+            console.log(numb);
+            //output: ["a", "b", "c", "d"]
+            //output: [1, 2, 3, 4]
+
+ 
     </script>
     
 </body>

@@ -1,4 +1,4 @@
-//Global scope
+//Global scope 
 let roll = "138";
 function showroll(){
     console.log(roll)
