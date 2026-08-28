@@ -50,6 +50,45 @@ console.log(user[userChoice]); // Output: rahim@example.com
 
 
 
-
-
 // Modifying Properties (মান পরিবর্তন, নতুন যোগ ও ডিলিট করা)
+
+//1. প্রপার্টির মান আপডেট (Update) করা
+//বিদ্যমান কোনো প্রপার্টিতে নতুন মান সেট করলে আগের মান বদলে যায়।
+const phone = {
+    brand: "Samsung",
+    price: 30000
+};
+
+// মূল্য বাড়িয়ে ৩৫০০০ করা হলো
+phone.price = 35000;
+
+console.log(phone); 
+// Output: { brand: 'Samsung', price: 35000 }
+
+//2. নতুন প্রপার্টি যোগ (Add) করা
+//অবজেক্টে তৈরি করার সময় না থাকলেও পরবর্তীতে যেকোনো সময় নতুন key ও value যোগ করা যায়।
+const laptop = {
+    brand: "Dell",
+    ram: "8GB"
+};
+
+// নতুন প্রপার্টি যোগ করা
+laptop.ssd = "512GB";
+laptop["color"] = "Black"; // Bracket notation দিয়েও করা যায়
+laptop.id= [345]          // number er jonn must [] dite hobe
+console.log(laptop); 
+// Output: { brand: 'Dell', ram: '8GB', ssd: '512GB', color: 'Black' }
+
+//3. প্রপার্টি মুছে ফেলা (Delete)
+//elete কিওয়ার্ড ব্যবহার করে অবজেক্টের যেকোনো প্রপার্টি পুরোপুরি ডিলিট করা যায়।
+const course = {
+    title: "JavaScript Mastery",
+    duration: "3 Months",
+    isDiscountAvailable: false
+};
+
+// 'isDiscountAvailable' প্রপার্টিটি ডিলিট করে দেওয়া হলো
+delete course.isDiscountAvailable;
+
+console.log(course); 
+// Output: { title: 'JavaScript Mastery', duration: '3 Months' }
