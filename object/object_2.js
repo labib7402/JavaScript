@@ -92,3 +92,21 @@ delete course.isDiscountAvailable;
 
 console.log(course); 
 // Output: { title: 'JavaScript Mastery', duration: '3 Months' }
+
+
+
+
+
+//practics
+const book = {
+    title: "JS Bassics",
+    price: ["450"],
+    "font end": "With React"
+
+}
+console.log(book["font end"])  //jodi propaatir name er moddho word bade(spase/onno carecter) thake tobe[] hobe
+console.log(book)
+book.price = "500"
+book.author = "Labib"
+delete book.price
+delete book["font end"];
