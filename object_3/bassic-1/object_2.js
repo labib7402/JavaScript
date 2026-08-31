@@ -110,3 +110,4 @@ book.price = "500"
 book.author = "Labib"
 delete book.price
 delete book["font end"];
+
