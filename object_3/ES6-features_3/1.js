@@ -61,3 +61,11 @@ const shallowCopy = { ...original };
 shallowCopy.address.city = "Sylhet"; 
 
 console.log(original.address.city); // Output: Sylhet (original-ও বদলে গেছে!)
+
+//Deep Copy (পুরোপুরি নতুন কপি):
+//নেস্টেড অবজেক্টসহ সবকিছু সম্পূর্ণ আলাদা মেমোরিতে নতুন করে কপি করতে structuredClone() ব্যবহার করা হয়।
+
+const deepCopy = structuredClone(original);
+deepCopy.address.city = "Rajshahi";
+
+console.log(original.address.city); // Output: Sylhet (original একদম সুরক্ষিত!)
