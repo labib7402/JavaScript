@@ -42,3 +42,47 @@ Product.prototype = Object.create(BaseEntity);
 Product.prototype.getFormattedPrice = function() {
     return `$${this.price.toFixed(2)}`;
 };
+
+
+// ==========================================
+// SYSTEM CORE (Levels 1, 2, 3, 4, 5)
+// ==========================================
+
+const InventorySystem = {
+    systemName: "TechStore Inventory",
+    
+    // LEVEL 5: Map - দ্রুত কি-ভ্যালু সার্চিংয়ের জন্য
+    productsMap: new Map(),
+
+    // LEVEL 1 & 2: Nested Object & Method
+    config: {
+        currency: "USD",
+        taxRate: 0.10,
+        getTax(amount) {
+            return amount * this.taxRate;
+        }
+    },
+
+    // প্রোডাক্ট যোগ করা
+    addProduct(product) {
+        this.productsMap.set(product.id, product);
+    },
+
+    
+    // LEVEL 2: Iteration (Object.entries & for...in)
+    generateReport() {
+        console.log(`\n=== ${this.systemName} Report ===`);
+        
+        // Map এন্ট্রি ঘুরে দেখা
+        for (let [id, product] of this.productsMap.entries()) {
+            // LEVEL 3: Destructuring
+            const { name, price, category } = product;
+            
+            // LEVEL 4: Optional Chaining (?.) & Nullish Coalescing (??)
+            const discount = product.discountInfo?.percentage ?? 0;
+            const finalPrice = price - (price * (discount / 100));
+
+            console.log(`Product: ${name} | Category: ${category} | Base Price: $${price} | Final Price: $${finalPrice}`);
+        }
+    }
+};
