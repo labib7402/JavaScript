@@ -41,7 +41,7 @@ Product.prototype = Object.create(BaseEntity);
 // LEVEL 2: Object Method with ES6 Shorthand & `this`
 Product.prototype.getFormattedPrice = function() {
     return `$${this.price.toFixed(2)}`;
-};
+}; 
 
 
 // ==========================================
