@@ -84,13 +84,12 @@ const InventorySystem = {
 
             console.log(`Product: ${name} | Category: ${category} | Base Price: $${price} | Final Price: $${finalPrice}`);
         }
-    }
-};
+    },
 
 // LEVEL 3: Destructuring & Spread Operator
     updateProductPrice(productId, newPrice) {
         if (!this.productsMap.has(productId)) return "Product not found!";
-        
+         
         const existingProduct = this.productsMap.get(productId);
         
         // Spread Operator দিয়ে নতুন অবজেক্ট ক্রিয়েট
@@ -102,3 +101,30 @@ const InventorySystem = {
         this.productsMap.set(productId, updatedProduct);
         return `Price updated for ${updatedProduct.name}`;
     },
+
+
+    // LEVEL 3: Deep Copy
+    getBackupInventory() {
+        // structuredClone দিয়ে Deep Copy
+        const mapAsArray = Array.from(this.productsMap.entries());
+        return structuredClone(mapAsArray);
+    },
+};
+
+// LEVEL 4: Object Protection   
+// সিস্টেমের কনফিগারেশন চেঞ্জ আটকানো
+Object.freeze(InventorySystem.config);
+
+
+// ==========================================
+// TEST DRIVE (প্রজেক্ট রান করা)
+// ==========================================
+
+// ১. নতুন প্রোডাক্ট তৈরি
+const laptop = new Product(101, "MacBook Pro", 1200, "Electronics", ["apple", "laptop", "apple"]);
+const phone = new Product(102, "Pixel 8", 800, "Electronics", ["google", "mobile"]);
+
+// LEVEL 4: Optional Chaining এর টেস্ট ডেটা
+phone.discountInfo = { percentage: 10 };
+
+    
