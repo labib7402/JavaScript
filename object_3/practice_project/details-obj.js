@@ -86,3 +86,19 @@ const InventorySystem = {
         }
     }
 };
+
+// LEVEL 3: Destructuring & Spread Operator
+    updateProductPrice(productId, newPrice) {
+        if (!this.productsMap.has(productId)) return "Product not found!";
+        
+        const existingProduct = this.productsMap.get(productId);
+        
+        // Spread Operator দিয়ে নতুন অবজেক্ট ক্রিয়েট
+        const updatedProduct = { 
+            ...existingProduct, 
+            price: newPrice 
+        };
+        
+        this.productsMap.set(productId, updatedProduct);
+        return `Price updated for ${updatedProduct.name}`;
+    },
