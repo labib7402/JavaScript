@@ -127,4 +127,30 @@ const phone = new Product(102, "Pixel 8", 800, "Electronics", ["google", "mobile
 // LEVEL 4: Optional Chaining এর টেস্ট ডেটা
 phone.discountInfo = { percentage: 10 };
 
+
+
+// ২. সিস্টেমে ইনসার্ট
+InventorySystem.addProduct(laptop);
+InventorySystem.addProduct(phone);
+
+// 🔍 টেস্ট ১: Property Descriptor (id বদলানো যাবে না)
+laptop.id = 999; 
+console.log("ReadOnly ID Check:", laptop.id); // Output: 101
+
+// 🔍 টেস্ট ২: Set (ডুপ্লিকেট ট্যাগ বাদ দেওয়া)
+console.log("Laptop Tags (Unique):", Array.from(laptop.tags)); // Output: ['apple', 'laptop']
+
+// 🔍 টেস্ট ৩: Prototype Chain
+console.log("Prototype Inheritance Check:", laptop.getDetails()); // Output: [ID: 101] MacBook Pro
+
+// 🔍 টেস্ট ৪: Object Protection (Freeze)
+InventorySystem.config.taxRate = 0.20; // কাজ করবে না
+console.log("Tax Rate (Frozen):", InventorySystem.config.taxRate); // Output: 0.10
+
+// 🔍 টেস্ট ৫: Update & Spread Operator
+console.log(InventorySystem.updateProductPrice(101, 1150));
+
+// 🔍 টেস্ট ৬: Final Report Generation
+InventorySystem.generateReport();
+
     
