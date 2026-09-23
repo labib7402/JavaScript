@@ -9,6 +9,8 @@ function functionName(parameter1, parameter2) {
 
 
 
+
+
 //2. সাধারণ একটি ফাংশন (Basic Function)
 //নিচে একটি সাধারণ ফাংশনের উদাহরণ দেওয়া হলো যা কেবল একটি বার্তা প্রিন্ট করে:
 
@@ -19,6 +21,7 @@ function sayHello() {
 
 // b. ফাংশন কল (Function Call / Invocation)
 sayHello(); // আউটপুট: হ্যালো! JavaScript-এ স্বাগতম।
+
 
 
 
@@ -33,3 +36,33 @@ function greetUser(name) {
 // "রাহাত" এবং "নাসরিন" হলো Arguments
 greetUser("রাহাত");  // আউটপুট: স্বাগতম, রাহাত!
 greetUser("নাসরিন"); // আউটপুট: স্বাগতম, নাসরিন!
+
+
+
+
+// 4. return কিওয়ার্ডের ব্যবহার
+//একটি ফাংশন হিসাব-নিকাশ শেষে মূল কোডে কোনো মান ফেরত দিতে return ব্যবহার করে। return এক্সিকিউট হওয়ার সাথে সাথে ফাংশনের কাজ শেষ হয়ে যায়।
+
+function addNumbers(a, b) {
+    let sum = a + b;
+    return sum; // মান ফেরত পাঠাচ্ছে
+}
+
+// ফাংশন কল করে রিটার্ন করা মান একটি ভ্যারিয়েবলে রাখা হলো
+let result = addNumbers(10, 20);
+console.log("যোগফল:", result); // আউটপুট: যোগফল: 30
+
+
+
+
+//5 ৫. JavaScript-এ ফাংশন লেখার আধুনিক উপায়ে (Arrow Function)
+//ES6 ভার্সনে ফাংশন লেখার একটি সংক্ষিপ্ত ও আধুনিক নিয়ম যুক্ত হয়েছে, যাকে Arrow Function বলা হয়।
+
+function multiply(x, y) {
+    return x * y;
+}
+
+//Arrow Function দিয়ে সংক্ষেপে:
+const multiply = (x, y) => x * y;
+
+console.log(multiply(5, 4)); // আউটপুট: 20
