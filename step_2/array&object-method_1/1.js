@@ -47,6 +47,8 @@ console.log(user.name);
 
 
 
+
+
 //Object Methods
 //অবজেক্টের ভেতর থেকে ডাটা সহজে বের করা, ফিল্টার করা বা লুপ চালানোর জন্য জাভাস্ক্রিপ্
 //টেObject.keys(), Object.values() এবং Object.entries() মেথডগুলো ব্যবহার করা হয়।
