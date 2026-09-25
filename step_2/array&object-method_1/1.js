@@ -24,3 +24,29 @@ numbers.map(num => num * 2); // output : [ 20, 40, 60, 80 ]
 //Array Method: ফলগুলো কাটার ছুরি, জুস বানানোর ব্লেন্ডার, বা ভালো ফল বাছাই করার চালনি।
 
 //অর্থাৎ, Array হলো ডাটা নিজে, আর Array Method হলো ডাটা প্রসেস করার বিল্ট-ইন টুলস।
+
+
+
+
+
+
+
+
+
+//Array vs Object: অ্যারেতে ডাটা ইনডেক্স (0, 1, 2) অনুযায়ী থাকে, আর অবজেক্টে নামযুক্ত কী (key) দিয়ে ডাটা নির্দিষ্ট করা হয়।
+// একটি ইউজার অবজেক্ট
+const user = {
+  id: 101,
+  name: "Rahim",
+  role: "admin",
+  isVerified: true
+};
+
+console.log(user.name); 
+// output : Rahim
+
+
+
+//Object Methods
+//অবজেক্টের ভেতর থেকে ডাটা সহজে বের করা, ফিল্টার করা বা লুপ চালানোর জন্য জাভাস্ক্রিপ্
+//টেObject.keys(), Object.values() এবং Object.entries() মেথডগুলো ব্যবহার করা হয়।
